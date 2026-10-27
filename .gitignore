@@ -11,3 +11,5 @@
 /.kotlin
 
 /dist
+
+keystore*
