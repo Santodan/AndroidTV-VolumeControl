@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'APK version label (e.g. v1.0.1; defaults to app version)'
+        description: 'Release version (e.g. v1.0.1; defaults to app version)'
         required: false
         default: ''
 
@@ -84,14 +84,21 @@ jobs:
             exit 1
           fi
           cp app/build/outputs/apk/release/app-release.apk "VolumeControl-${VERSION}-release.apk"
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "RELEASE_TAG=$GITHUB_REF_NAME" >> "$GITHUB_ENV"
+          else
+            echo "RELEASE_TAG=v${VERSION}" >> "$GITHUB_ENV"
+          fi
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: |
-            VolumeControl-*.apk
-            app/build/outputs/apk/release/*.apk
+          tag_name: ${{ env.RELEASE_TAG }}
+          target_commitish: ${{ github.sha }}
+          name: Volume Control ${{ env.RELEASE_TAG }}
+          files: VolumeControl-*.apk
+          fail_on_unmatched_files: true
+          generate_release_notes: true
           draft: false
           prerelease: false
         env:

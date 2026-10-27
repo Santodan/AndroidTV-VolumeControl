@@ -150,14 +150,21 @@ app/build/outputs/apk/release/app-release.apk
 ### GitHub Actions builds
 
 Push a commit with `[release]` anywhere in its message (for example,
-`Fix volume switching [release]`) to build a signed release APK. If a push
+`Fix volume switching [release]`) to build a signed release APK and publish
+it automatically in the repository's **Releases**. If a push
 contains several commits, a matching message in any of them triggers the build.
 Other branch pushes show a skipped build job.
 
-Download the APK from **Actions → Build and Release → the run → Artifacts →
-VolumeControl-APK**. Pushing a `v*` tag also builds the APK and publishes a
-GitHub Release. You can also start a build manually with **Run workflow**;
-its optional version input changes the APK filename only.
+The release tag defaults to `v` followed by the app's `versionName` (currently
+`v1.0.0`). Releasing the same version again updates the APK on that release;
+increase `versionName` and `versionCode` in `app/build.gradle.kts` for a new
+app version. Existing tags stay on their original commit.
+
+Pushing a `v*` tag also builds and publishes a release using that tag. You can
+start a release manually with **Run workflow**; its optional version input
+sets the release tag and APK filename, without changing the app's internal version.
+The APK is also available from **Actions → Build and Release → the run →
+Artifacts → VolumeControl-APK**.
 
 The repository must have these Actions secrets: `KEYSTORE_BASE64`,
 `KEYSTORE_PASSWORD`, and `KEY_PASSWORD`. The optional `KEY_ALIAS` secret
