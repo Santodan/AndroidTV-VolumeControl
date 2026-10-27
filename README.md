@@ -147,7 +147,24 @@ app/build/outputs/apk/debug/app-debug.apk
 app/build/outputs/apk/release/app-release.apk
 ```
 
-### Signing
+### GitHub Actions builds
+
+Push a commit with `[release]` anywhere in its message (for example,
+`Fix volume switching [release]`) to build a signed release APK. If a push
+contains several commits, a matching message in any of them triggers the build.
+Other branch pushes show a skipped build job.
+
+Download the APK from **Actions → Build and Release → the run → Artifacts →
+VolumeControl-APK**. Pushing a `v*` tag also builds the APK and publishes a
+GitHub Release. You can also start a build manually with **Run workflow**;
+its optional version input changes the APK filename only.
+
+The repository must have these Actions secrets: `KEYSTORE_BASE64`,
+`KEYSTORE_PASSWORD`, `KEY_ALIAS`, and `KEY_PASSWORD`. The workflow restores
+the keystore to `keystore/appvolume-release.jks` and passes the signing
+credentials to Gradle through environment variables.
+
+### Local signing
 
 Release signing is configured in `app/build.gradle.kts` and reads
 `keystore.properties` from the project root:
