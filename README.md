@@ -160,7 +160,8 @@ GitHub Release. You can also start a build manually with **Run workflow**;
 its optional version input changes the APK filename only.
 
 The repository must have these Actions secrets: `KEYSTORE_BASE64`,
-`KEYSTORE_PASSWORD`, `KEY_ALIAS`, and `KEY_PASSWORD`. The workflow restores
+`KEYSTORE_PASSWORD`, and `KEY_PASSWORD`. The optional `KEY_ALIAS` secret
+overrides the default alias, `appvolume`. The workflow restores
 the keystore to `keystore/appvolume-release.jks` and passes the signing
 credentials to Gradle through environment variables.
 

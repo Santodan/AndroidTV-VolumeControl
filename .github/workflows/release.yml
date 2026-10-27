@@ -57,7 +57,7 @@ jobs:
         env:
           KEYSTORE_FILE: keystore/appvolume-release.jks
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS || 'appvolume' }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           for secret in KEYSTORE_PASSWORD KEY_ALIAS KEY_PASSWORD; do
