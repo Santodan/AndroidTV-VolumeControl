@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Volume Control</string>
+    <string name="main_subtitle">Starting volume, per app.</string>
+    <string name="auto_apply_on">AUTO-APPLY  ON</string>
+    <string name="auto_apply_off">AUTO-APPLY  OFF</string>
+    <string name="auto_apply_description">Pause or resume automatic volume changes</string>
+
+    <string name="apps_label">APPS</string>
+    <string name="apps_label_count">APPS  ·  %1$d</string>
+    <string name="list_hint">LEFT / RIGHT adjust   •   OK options</string>
+    <string name="footer">Starting levels apply when apps open; the default applies when they close.</string>
+
+    <string name="status_off_title">Automation is off</string>
+    <string name="status_off_message">Enable the accessibility service so your levels apply automatically.</string>
+    <string name="status_on_title">Automation is active</string>
+    <string name="status_on_message">Saved levels are applied when apps come to the foreground.</string>
+    <string name="status_paused_title">Automation is paused</string>
+    <string name="status_paused_message">Auto-apply is off. Your saved levels will not be applied.</string>
+    <string name="status_action_enable">TURN ON</string>
+    <string name="status_action_settings">SETTINGS</string>
+    <string name="status_dot">●</string>
+
+    <string name="row_not_set">Not set</string>
+    <string name="row_level">Level %1$d of %2$d</string>
+    <string name="row_set_meta">Saved starting level</string>
+    <string name="row_uses_current">Uses current level %1$d of %2$d</string>
+    <string name="row_content_set">%1$s, starting level %2$d of %3$d</string>
+    <string name="row_content_unset">%1$s, level not set</string>
+
+    <string name="default_volume_title">Default volume</string>
+    <string name="default_volume_note_set">Used when you leave an app with a saved level.</string>
+    <string name="default_volume_note_unset">Set a level to restore when you leave an app.</string>
+    <string name="default_volume_subtitle">Used when an app has no saved level.</string>
+    <string name="default_volume_content_set">Default volume, level %1$d of %2$d</string>
+    <string name="default_volume_content_unset">Default volume, not set</string>
+    <string name="default_dialog_note_set">Applied to apps without their own saved level.</string>
+    <string name="default_dialog_note_unset">Not set. Apps without a saved level keep the current volume.</string>
+
+    <string name="dialog_starting_level">STARTING LEVEL</string>
+    <string name="dialog_default_level">DEFAULT LEVEL</string>
+    <string name="dialog_not_set">Not set</string>
+    <string name="dialog_value_level">Level %1$d</string>
+    <string name="dialog_of_max">of %1$d</string>
+    <string name="dialog_current_level">Current level %1$d of %2$d</string>
+    <string name="dialog_note_unset">Not set. Use the buttons to create a level for this app.</string>
+    <string name="dialog_note_set">Applied the next time this app opens.</string>
+    <string name="dialog_min">MIN</string>
+    <string name="dialog_max">MAX</string>
+    <string name="dialog_minus_ten">−10</string>
+    <string name="dialog_plus_ten">+10</string>
+    <string name="dialog_set_min">Set minimum volume</string>
+    <string name="dialog_set_max">Set maximum volume</string>
+    <string name="dialog_minus_ten_desc">Decrease by 10 levels</string>
+    <string name="dialog_plus_ten_desc">Increase by 10 levels</string>
+    <string name="dialog_open">OPEN APP</string>
+    <string name="dialog_clear">CLEAR</string>
+    <string name="dialog_done">DONE</string>
+    <string name="dialog_decrease">Decrease volume</string>
+    <string name="schedules_title">Schedules</string>
+    <string name="schedules_subtitle">Time-based volumes for this item.</string>
+    <string name="schedules_add">ADD SCHEDULE</string>
+    <string name="schedules_clear">CLEAR SCHEDULES</string>
+    <string name="schedules_edit">EDIT SCHEDULE</string>
+    <string name="schedules_empty">No schedules</string>
+    <string name="schedule_time_from">FROM</string>
+    <string name="schedule_time_to">TO</string>
+    <string name="schedule_volume">VOLUME</string>
+    <string name="schedule_range">%1$02d:%2$02d - %3$02d:%4$02d</string>
+    <string name="schedule_range_level">Level %1$d of %2$d</string>
+    <string name="dialog_increase">Increase volume</string>
+    <string name="loading_apps">Loading apps…</string>
+    <string name="empty_apps">No apps found</string>
+    <string name="toast_no_launch_intent">This app cannot be opened from Volume Control.</string>
+    <string name="toast_accessibility_settings">Could not open the accessibility settings.</string>
+
+    <string name="accessibility_service_label">Volume Control</string>
+    <string name="accessibility_service_summary">Detects the foreground app so per-app volume levels can be applied.</string>
+    <string name="accessibility_service_description">Volume Control watches for app changes so it can set the TV media volume to the level you chose for each app. It only reads the foreground app\'s package name. It does not read, capture, or store screen content.</string>
+</resources>

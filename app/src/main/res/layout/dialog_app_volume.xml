@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical"
+    android:paddingStart="28dp"
+    android:paddingTop="24dp"
+    android:paddingEnd="28dp"
+    android:paddingBottom="22dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/dialogIcon"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialogTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/dialogPackage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="@color/text_tertiary"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:includeFontPadding="false"
+        android:letterSpacing="0.15"
+        android:text="@string/dialog_starting_level"
+        android:textColor="@color/text_tertiary"
+        android:textSize="11sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/decreaseButton"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_button"
+            android:clickable="true"
+            android:contentDescription="@string/dialog_decrease"
+            android:focusable="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:nextFocusDown="@id/minButton"
+            android:nextFocusRight="@id/increaseButton"
+            android:text="−"
+            android:textColor="@color/button_text"
+            android:textSize="28sp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialogValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:includeFontPadding="false"
+                android:textColor="@color/accent"
+                android:textSize="38sp" />
+
+            <TextView
+                android:id="@+id/dialogLevel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:includeFontPadding="false"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/increaseButton"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:background="@drawable/bg_button"
+            android:clickable="true"
+            android:contentDescription="@string/dialog_increase"
+            android:focusable="true"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:nextFocusDown="@id/plusTenButton"
+            android:nextFocusLeft="@id/decreaseButton"
+            android:text="+"
+            android:textColor="@color/button_text"
+            android:textSize="28sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/minButton"
+            style="@style/TextButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/dialog_set_min"
+            android:nextFocusRight="@id/minusTenButton"
+            android:nextFocusUp="@id/decreaseButton"
+            android:text="@string/dialog_min"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/minusTenButton"
+            style="@style/TextButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/dialog_minus_ten_desc"
+            android:nextFocusLeft="@id/minButton"
+            android:nextFocusRight="@id/plusTenButton"
+            android:nextFocusUp="@id/decreaseButton"
+            android:text="@string/dialog_minus_ten"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/plusTenButton"
+            style="@style/TextButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/dialog_plus_ten_desc"
+            android:nextFocusLeft="@id/minusTenButton"
+            android:nextFocusRight="@id/maxButton"
+            android:nextFocusUp="@id/increaseButton"
+            android:text="@string/dialog_plus_ten"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/maxButton"
+            style="@style/TextButton"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/dialog_set_max"
+            android:nextFocusLeft="@id/plusTenButton"
+            android:nextFocusUp="@id/increaseButton"
+            android:text="@string/dialog_max"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dialogNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="@string/dialog_note_unset"
+        android:textColor="@color/text_tertiary"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="18dp"
+        android:background="@color/stroke" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:includeFontPadding="false"
+            android:letterSpacing="0.16"
+            android:text="@string/schedules_title"
+            android:textColor="@color/text_tertiary"
+            android:textSize="11sp" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/scheduleClear"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/schedules_clear" />
+
+        <TextView
+            android:id="@+id/scheduleAdd"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/schedules_add" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scheduleList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:descendantFocusability="afterDescendants"
+        android:focusable="true"
+        android:overScrollMode="never"
+        android:paddingBottom="2dp"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/scheduleEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:text="@string/schedules_empty"
+        android:textColor="@color/text_tertiary"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/stroke" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/openButton"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusUp="@id/scheduleAdd"
+            android:text="@string/dialog_open" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/clearButton"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:nextFocusUp="@id/scheduleList"
+            android:text="@string/dialog_clear" />
+
+        <TextView
+            android:id="@+id/doneButton"
+            style="@style/TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:nextFocusUp="@id/scheduleList"
+            android:text="@string/dialog_done" />
+    </LinearLayout>
+
+</LinearLayout>
+
